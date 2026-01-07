@@ -12,190 +12,388 @@
         }
 
         body {
-            font-family: 'Courier New', 'Courier', monospace;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            color: #2c3e50;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            z-index: 1000;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .nav-container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-logo {
+            color: #2563eb;
+            font-size: 20px;
+            font-weight: 600;
+            margin-right: auto;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-item {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.2s;
+            font-weight: 500;
+        }
+
+        .nav-item:hover {
+            color: #2563eb;
+        }
+
+        .nav-item.active {
+            color: #2563eb;
+        }
+
+        .nav-dropdown {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-dropdown .nav-item {
+            font-size: 16px;
+        }
+
+        .nav-dropdown-content {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 12px;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 140px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-dropdown-item {
+            display: block;
+            padding: 10px 16px;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .nav-dropdown-item:hover {
+            background: #f3f4f6;
+            color: #2563eb;
         }
 
         .container {
             max-width: 680px;
             margin: 0 auto;
-            padding: 80px 32px;
+            padding: 40px 32px 80px;
         }
 
         h1 {
             font-size: 24px;
             font-weight: normal;
-            color: #ffffff;
+            color: #1f2937;
             margin-bottom: 12px;
             letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .separator {
-            color: #404040;
-            font-weight: 300;
-        }
-
-        .explore-container {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .explore-text {
-            color: #ffffff;
-            font-weight: normal;
-        }
-
-        .explore-dropdown {
-            position: absolute;
-            top: -30px;
-            right: -40px;
-            background: transparent;
-            padding: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s, visibility 0.2s;
-            white-space: nowrap;
-        }
-
-        .explore-container:hover .explore-dropdown {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .explore-dropdown a {
-            color: #4a9eff;
-            text-decoration: none;
-            font-size: 16px;
-            font-family: 'Courier New', 'Courier', monospace;
-        }
-
-        .explore-dropdown a:hover {
-            text-decoration: underline;
-        }
-
-        h1 {
-            font-size: 24px;
-            font-weight: normal;
-            color: #ffffff;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-
-        .separator {
-            color: #404040;
-            font-weight: 300;
-        }
-
-        .subtitle {
-            font-size: 14px;
-            color: #808080;
-            font-style: italic;
-            margin-bottom: 32px;
+            display: none;
         }
 
         .blue {
-            color: #4a9eff;
+            color: #2563eb;
         }
 
-        a {
-            color: #4a9eff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
+        .subtitle {
+            font-size: 15px;
+            color: #9ca3af;
+            font-style: italic;
+            margin-bottom: 32px;
+            line-height: 1.6;
         }
 
         .tagline {
-            font-size: 18px;
-            color: #ffffff;
-            margin-bottom: 48px;
-            font-weight: normal;
+            font-size: 20px;
+            color: #1f2937;
+            margin-bottom: 32px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
         p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #c0c0c0;
-            margin-bottom: 32px;
-            font-weight: normal;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 28px;
+            font-weight: 400;
         }
 
-        .principle {
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        .page-content {
+            display: block;
+        }
+
+        .page-content.hidden {
+            display: none;
+        }
+
+        .back-link {
+            color: #2563eb;
+            text-decoration: none;
             font-size: 16px;
-            line-height: 1.8;
-            color: #c0c0c0;
+            display: none;
+            margin-bottom: 32px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .position-title {
+            font-size: 24px;
+            color: #1f2937;
             margin-bottom: 24px;
+            font-weight: 600;
+            margin-top: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .skills-section {
+            margin-top: 48px;
+            background: #ffffff;
+            padding: 60px 40px;
+            margin-left: -32px;
+            margin-right: -32px;
+            border-radius: 12px;
+        }
+
+        .skills-title {
+            font-size: 32px;
+            color: #1f2937;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            padding: 16px 32px;
+            border: 2px solid #e5e7eb;
+            background: #f9fafb;
+            color: #4b5563;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: default;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+
+        .skill-item:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+            background: #eff6ff;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+            transform: translateY(-4px);
         }
 
         .footer {
             margin-top: 80px;
             padding-top: 40px;
+            border-top: 1px solid #e5e7eb;
         }
 
         .footer-text {
             font-size: 14px;
-            color: #808080;
+            color: #9ca3af;
             line-height: 1.8;
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 60px 24px;
+                padding: 30px 24px 60px;
             }
 
-            h1 {
-                font-size: 20px;
+            .nav-container {
+                padding: 0 24px;
             }
 
             .tagline {
+                font-size: 18px;
+            }
+
+            p {
                 font-size: 16px;
             }
 
-            p, .principle {
-                font-size: 15px;
+            .position-title {
+                font-size: 22px;
+            }
+
+            .skills-section {
+                padding: 40px 24px;
+                margin-left: -24px;
+                margin-right: -24px;
+            }
+
+            .skills-title {
+                font-size: 26px;
+            }
+
+            .skills-grid {
+                gap: 12px;
+            }
+
+            .skill-item {
+                padding: 12px 24px;
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>
-            <span class="blue">BlueNova</span>
-            <span class="separator">|</span>
-            <div class="explore-container">
-                <span class="explore-text">Explore</span>
-                <div class="explore-dropdown">
-                    <a href="https://bubble-by-blue-nova-1051217263850.us-west1.run.app/" target="_blank">Bubble</a>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">BlueNova</div>
+            <span class="nav-item active" id="navHome" onclick="showHome()">Home</span>
+            <span class="nav-item" id="navCareers" onclick="showCareers()">Careers</span>
+            <div class="nav-dropdown">
+                <span class="nav-item">Explore</span>
+                <div class="nav-dropdown-content">
+                    <a href="https://bubble-by-blue-nova-1051217263850.us-west1.run.app/" target="_blank" class="nav-dropdown-item">Bubble</a>
                 </div>
             </div>
-        </h1>
-        
-        <p class="subtitle">a quiet transformation where latent potential becomes visible and starts to redefine what follows</p>
-        
-        <p class="tagline">Engineering the next layer of everyday life.</p>
-        
-        <p>BlueNova IT Solutions is a consumer-focused technology company dedicated to applying contemporary innovation in practical and meaningful ways. We design and build systems that address real-world needs by combining software, automation, and emerging technologies — with clarity, reliability, and long-term value as core principles.</p>
-        
-        <p>Technology today is more capable than ever, yet its real impact depends on how thoughtfully it is applied. Our purpose is to translate advanced capabilities into tools people can trust, understand, and use naturally in their daily lives.</p>
-        
-        <p>One of our products currently in development is <a href="https://bubble-by-blue-nova-1051217263850.us-west1.run.app/" target="_blank">Bubble</a>, a people-focused technology designed to enhance real-world safety for families. Built with everyday use in mind, Bubble explores how modern technology can support awareness, reassurance, and connection in a natural and unobtrusive way.</p>
-        
-        <p>We are building a small, focused team of engineers and technologists to work on problems with long-term relevance. The work involves designing and building reliable systems, making thoughtful technical decisions, and taking responsibility for real-world outcomes. If this kind of work resonates with you, join us.</p>
-        
-        <div class="footer">
-            <p class="footer-text">© BlueNova IT Solutions<br>Building thoughtful technology for everyday life.<br><br>Alpha Imperio, Sangamwadi<br>Pune · India<br><br><a href="mailto:bluenovaitsolution@gmail.com">bluenovaitsolution@gmail.com</a></p>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="homePage" class="page-content">
+            <p class="subtitle">a quiet transformation where latent potential becomes visible and starts to redefine what follows</p>
+            
+            <p class="tagline">Engineering the next layer of everyday life.</p>
+            
+            <p>We use modern, evolving technologies to build solutions that make everyday life easier for people.</p>
+            
+            <p>BlueNova IT Solutions is a consumer-focused technology company dedicated to applying contemporary innovation in practical and meaningful ways. We design and build systems that address real-world needs by combining software, automation, and emerging technologies — with clarity, reliability, and long-term value as core principles.</p>
+            
+            <p>Technology today is more capable than ever, yet its real impact depends on how thoughtfully it is applied. Our purpose is to translate advanced capabilities into tools people can trust, understand, and use naturally in their daily lives.</p>
+            
+            <p>One of our products currently in development is <a href="https://bubble-by-blue-nova-1051217263850.us-west1.run.app/" target="_blank">Bubble</a>, a people-focused technology designed to enhance real-world safety for families. Built with everyday use in mind, Bubble explores how modern technology can support awareness, reassurance, and connection in a natural and unobtrusive way.</p>
+            
+            <p>We are building a small, focused team of engineers and technologists to work on problems with long-term relevance. The work involves designing and building reliable systems, making thoughtful technical decisions, and taking responsibility for real-world outcomes. If this kind of work resonates with you, join us.</p>
+            
+            <div class="footer">
+                <p class="footer-text">© BlueNova IT Solutions<br>Building thoughtful technology for everyday life.<br><br>Alpha Imperio, Sangamwadi<br>Pune · India<br><br><a href="mailto:bluenovaitsolution@gmail.com">bluenovaitsolution@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div id="careersPage" class="page-content hidden">
+            <a href="#" onclick="showHome(); return false;" class="back-link">← Back to Home</a>
+            
+            <p class="position-title">Full Stack iOS Developer</p>
+            
+            <p>We are looking for a talented team of full stack iOS developers who are passionate about building exceptional mobile experiences. At BlueNova, you'll work on products that make a real difference in people's everyday lives.</p>
+            
+            <p>This role involves end-to-end development of iOS applications, from designing elegant user interfaces to implementing robust backend integrations. You'll be working with modern technologies and frameworks to create seamless, reliable, and performant applications.</p>
+            
+            <p>We value craftsmanship, attention to detail, and the ability to think through complex problems. If you're someone who takes pride in writing clean code and building products that users love, we'd like to hear from you.</p>
+            
+            <div class="skills-section">
+                <p class="skills-title">Skills & Technologies</p>
+                <div class="skills-grid">
+                    <div class="skill-item">Swift</div>
+                    <div class="skill-item">SwiftUI</div>
+                    <div class="skill-item">UIKit</div>
+                    <div class="skill-item">Xcode</div>
+                    <div class="skill-item">Core Data</div>
+                    <div class="skill-item">REST APIs</div>
+                    <div class="skill-item">GraphQL</div>
+                    <div class="skill-item">Firebase</div>
+                    <div class="skill-item">Git & Version Control</div>
+                    <div class="skill-item">iOS Architecture</div>
+                    <div class="skill-item">Combine Framework</div>
+                    <div class="skill-item">Async/Await</div>
+                    <div class="skill-item">Unit Testing</div>
+                    <div class="skill-item">CI/CD</div>
+                    <div class="skill-item">App Store Guidelines</div>
+                    <div class="skill-item">Performance Optimization</div>
+                    <div class="skill-item">Responsive Design</div>
+                    <div class="skill-item">Push Notifications</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 48px;">Interested? Send your resume and portfolio to <a href="mailto:bluenovaitsolution@gmail.com">bluenovaitsolution@gmail.com</a></p>
+            
+            <div class="footer">
+                <p class="footer-text">© BlueNova IT Solutions<br>Building thoughtful technology for everyday life.<br><br>Alpha Imperio, Sangamwadi<br>Pune · India<br><br><a href="mailto:bluenovaitsolution@gmail.com">bluenovaitsolution@gmail.com</a></p>
+            </div>
         </div>
     </div>
+
+    <script>
+        function showCareers() {
+            document.getElementById('homePage').classList.add('hidden');
+            document.getElementById('careersPage').classList.remove('hidden');
+            document.getElementById('navHome').classList.remove('active');
+            document.getElementById('navCareers').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            document.getElementById('careersPage').classList.add('hidden');
+            document.getElementById('homePage').classList.remove('hidden');
+            document.getElementById('navCareers').classList.remove('active');
+            document.getElementById('navHome').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
 </html>
