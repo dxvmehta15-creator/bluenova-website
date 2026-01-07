@@ -35,6 +35,65 @@
             color: #ffffff;
             margin-bottom: 12px;
             letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .separator {
+            color: #404040;
+            font-weight: 300;
+        }
+
+        .explore-container {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .explore-text {
+            color: #ffffff;
+            font-weight: normal;
+        }
+
+        .explore-dropdown {
+            position: absolute;
+            top: -30px;
+            right: -40px;
+            background: transparent;
+            padding: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            white-space: nowrap;
+        }
+
+        .explore-container:hover .explore-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .explore-dropdown a {
+            color: #4a9eff;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Courier New', 'Courier', monospace;
+        }
+
+        .explore-dropdown a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .separator {
+            color: #404040;
+            font-weight: 300;
         }
 
         .subtitle {
@@ -111,7 +170,16 @@
 </head>
 <body>
     <div class="container">
-        <h1><span class="blue">BlueNova</span></h1>
+        <h1>
+            <span class="blue">BlueNova</span>
+            <span class="separator">|</span>
+            <div class="explore-container">
+                <span class="explore-text">Explore</span>
+                <div class="explore-dropdown">
+                    <a href="https://bubble-by-blue-nova-1051217263850.us-west1.run.app/" target="_blank">Bubble</a>
+                </div>
+            </div>
+        </h1>
         
         <p class="subtitle">a quiet transformation where latent potential becomes visible and starts to redefine what follows</p>
         
@@ -126,7 +194,7 @@
         <p>We are building a small, focused team of engineers and technologists to work on problems with long-term relevance. The work involves designing and building reliable systems, making thoughtful technical decisions, and taking responsibility for real-world outcomes. If this kind of work resonates with you, join us.</p>
         
         <div class="footer">
-            <p class="footer-text">© BlueNova IT Solutions<br>Building thoughtful technology for everyday life.<br><br>Pune · India<br><br><a href="mailto:bluenovaitsolution@gmail.com">bluenovaitsolution@gmail.com</a></p>
+            <p class="footer-text">© BlueNova IT Solutions<br>Building thoughtful technology for everyday life.<br><br>Alpha Imperio, Sangamwadi<br>Pune · India<br><br><a href="mailto:bluenovaitsolution@gmail.com">bluenovaitsolution@gmail.com</a></p>
         </div>
     </div>
 </body>
